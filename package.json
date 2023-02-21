@@ -1,0 +1,20 @@
+{
+  "name": "pi-browser",
+  "version": "1.0.0",
+  "description": "Script to recreate the Pi Browser app within a browser on your computer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Derouet/Pi-Browser.git"
+  },
+  "author": "B-Derouet <brewal_derouet@hotmail.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B-Derouet/Pi-Browser/issues"
+  },
+  "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
+  "packageManager": "yarn@3.4.1"
+}

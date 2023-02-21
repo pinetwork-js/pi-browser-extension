@@ -1,0 +1,122 @@
+{
+	"extends": [
+		"airbnb",
+		"eslint:recommended",
+		"plugin:sonarjs/recommended",
+		"plugin:unicorn/recommended",
+		"prettier"
+	],
+	"plugins": ["sonarjs", "unicorn", "prettier"],
+	"rules": {
+		"consistent-return": "off",
+		"class-methods-use-this": "off",
+		"eol-last": ["error", "always"],
+		"object-shorthand": [
+			"error",
+			"always",
+			{
+				"avoidQuotes": true
+			}
+		],
+		"no-plusplus": "off",
+		"no-underscore-dangle": "off",
+		"no-restricted-syntax": "off",
+		"no-spaced-func": "off",
+		"no-irregular-whitespace": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"one-var": ["error", "never"],
+		"no-cond-assign": ["error", "except-parens"],
+		"comma-dangle": 0,
+		"eqeqeq": [
+			"error",
+			"always",
+			{
+				"null": "ignore"
+			}
+		],
+		"new-parens": ["error", "always"],
+		"no-caller": "error",
+		"no-constant-condition": "error",
+		"no-control-regex": "error",
+		"no-debugger": "error",
+		"no-duplicate-case": "error",
+		"no-eval": "error",
+		"no-ex-assign": "error",
+		"no-extra-boolean-cast": "error",
+		"no-fallthrough": "error",
+		"no-inner-declarations": "error",
+		"no-unused-labels": "error",
+		"no-proto": "error",
+		"no-redeclare": "error",
+		"no-regex-spaces": "error",
+		"no-self-compare": "error",
+		"no-sparse-arrays": "error",
+		"no-negated-in-lhs": "error",
+		"no-new-wrappers": "error",
+		"no-self-assign": "error",
+		"no-this-before-super": "error",
+		"no-with": "error",
+		"rest-spread-spacing": ["error", "never"],
+		"no-trailing-spaces": [
+			"error",
+			{
+				"ignoreComments": true
+			}
+		],
+		"no-undef-init": "error",
+		"no-unsafe-finally": "error",
+		"padded-blocks": ["error", "never"],
+		"space-in-parens": ["error", "never"],
+		"use-isnan": "error",
+		"valid-typeof": [
+			"error",
+			{
+				"requireStringLiterals": true
+			}
+		],
+		"curly": ["error", "all"],
+		"handle-callback-err": ["error", "^error$"],
+		"no-array-constructor": "error",
+		"no-unreachable": "error",
+		"no-multi-spaces": "error",
+		"no-unneeded-ternary": "error",
+		"no-param-reassign": ["error", { "props": false }],
+		"no-continue": "off",
+	
+		"sonarjs/no-duplicate-string": "off",
+		"sonarjs/no-inverted-boolean-check": "error",
+
+		"unicorn/prefer-module": "off",
+		"unicorn/prefer-node-protocol": "off",
+		"unicorn/prefer-number-properties": "off",
+		"unicorn/filename-case": "off",
+		"unicorn/import-style": "off",
+		"unicorn/new-for-builtins": "off",
+		"unicorn/prevent-abbreviations": [
+			"warn",
+			{
+				"replacements": {
+					"i": false,
+					"j": false
+				}
+			}
+		],
+		"unicorn/no-array-callback-reference": "off",
+		"unicorn/no-array-method-this-argument": "off",
+		"unicorn/no-useless-undefined": ["error", { "checkArguments": false }],
+		"unicorn/consistent-function-scoping": ["error", { "checkArrowFunctions": false }],
+		"unicorn/no-unused-properties": "error",
+		"unicorn/no-unsafe-regex": "error",
+		"unicorn/prefer-at": "error",
+
+		"prettier/prettier": "error"
+	},
+	"env": {
+		"browser": true
+	}
+}

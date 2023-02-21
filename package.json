@@ -18,6 +18,12 @@
   "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
   "packageManager": "yarn@3.4.1",
   "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.18.0",
+    "eslint-plugin-unicorn": "^45.0.2",
     "prettier": "^2.8.4"
   }
 }

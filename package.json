@@ -16,5 +16,8 @@
     "url": "https://github.com/B-Derouet/Pi-Browser/issues"
   },
   "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  }
 }

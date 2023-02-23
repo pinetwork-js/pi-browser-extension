@@ -8,10 +8,11 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=minepi.com
 // @run-at       document-idle
 // @noframes
+// @unwrap
 // @grant        none
 // ==/UserScript==
-
-(async function () {
+/* eslint-disable unicorn/prefer-top-level-await */
+(async () => {
 	if (!localStorage.getItem('@pi:webview_ui_behaviors')) {
 		const config = {
 			platform: { desktop: true, os: 'win32', version: '10.0.0', arch: 'x64', uuid: '', hostApp: 'pi-node' },
@@ -19,11 +20,13 @@
 		};
 
 		localStorage.setItem('@pi:webview_ui_behaviors', JSON.stringify(config));
-		location.reload();
+		window.location.reload();
 	}
 
-	if (location.href === 'https://app-cdn.minepi.com/mobile-app-ui/close.html') {
-		location.href = 'https://app-cdn.minepi.com/mobile-app-ui/node-signin';
+	const pageURL = window.location.href;
+
+	if (pageURL === 'https://app-cdn.minepi.com/mobile-app-ui/close.html') {
+		window.location.href = 'https://app-cdn.minepi.com/mobile-app-ui/node-signin';
 	}
 
 	function createElement(text) {
@@ -33,14 +36,14 @@
 		return elements.length === 1 ? elements[0] : elements;
 	}
 
-	if (location.href.startsWith('https://app-cdn.minepi.com/browser')) {
+	if (pageURL.startsWith('https://app-cdn.minepi.com/browser')) {
 		const main = document.querySelector('main');
 
 		main.parentElement.children[0].remove();
 		main.style.paddingLeft = '0px';
 
-		const tempUrl = new URL(location.href).searchParams.get('url');
-		const url = tempUrl.replace('pi://', 'https://');
+		const temporaryUrl = new URL(pageURL).searchParams.get('url');
+		const url = temporaryUrl.replace('pi://', 'https://');
 		const appHostname = new URL(url).hostname;
 		const userToken = localStorage.getItem('mobile-app-webview-ui_access-token');
 		const appRequest = await fetch(`https://socialchain.app/api/mobile_app/resolved_url?q=${appHostname}`, {
@@ -52,6 +55,6 @@
 			`<iframe src="${securedUrl}" allow="clipboard-read; clipboard-write; camera" style="width: 100vw; height: 100vh; border: none;"></iframe>`,
 		);
 
-		main.appendChild(iframe);
+		main.append(iframe);
 	}
 })();

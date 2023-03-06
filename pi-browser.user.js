@@ -37,7 +37,25 @@
 	}
 
 	if (pageURL.startsWith('https://app-cdn.minepi.com/browser')) {
-		const main = document.querySelector('main');
+		const main = await new Promise((resolve) => {
+			if (document.querySelector('main')) {
+				resolve(document.querySelector('main'));
+
+				return;
+			}
+
+			const observer = new MutationObserver(() => {
+				if (document.querySelector('main')) {
+					resolve(document.querySelector('main'));
+					observer.disconnect();
+				}
+			});
+
+			observer.observe(document.body, {
+				childList: true,
+				subtree: true,
+			});
+		});
 
 		main.parentElement.children[0].remove();
 		main.style.paddingLeft = '0px';

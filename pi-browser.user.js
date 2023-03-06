@@ -106,7 +106,9 @@
 			headers: { Authorization: userToken },
 		});
 		const appData = await appRequest.json();
-		const securedUrl = appData.redirect_url.replace('http://', 'https://') + new URL(url).pathname;
+		const securedUrl = appData.redirect_url
+			? appData.redirect_url.replace('http://', 'https://') + new URL(url).pathname
+			: url;
 		const iframe = createElement(
 			`<iframe src="${securedUrl}" allow="clipboard-read; clipboard-write; camera" style="width: 100vw; height: 100vh; border: none;"></iframe>`,
 		);

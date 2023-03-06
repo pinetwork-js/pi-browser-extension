@@ -113,5 +113,19 @@
 		window.history.replaceState({}, '', `/browser?url=${urlToShow}`);
 
 		main.append(iframe);
+
+		iframe.addEventListener('load', (event) => {
+			event.currentTarget.contentWindow.postMessage({
+				type: '@pi:browser:init_navigation',
+			});
+		});
+
+		window.addEventListener('message', (event) => {
+			if (event.data.type === '@pi:browser:navigation_change') {
+				const newUrlToShow = realURLtoPiURL(event.data.payload.url);
+
+				window.history.replaceState({}, '', `/browser?url=${newUrlToShow}`);
+			}
+		});
 	}
 })();

@@ -2,7 +2,9 @@
 Script to recreate the Pi Browser app within a browser on your computer.
 
 ## How to use
-First, install the [Tampermonkey extension](https://www.tampermonkey.net/) (choose the browser you're using and follow the steps). When it's done, install the script [here](https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js) (it will open the Tampermonkey dashboard with the script you want to install, just click on the install button to save it in your browser).
+First, install the [Tampermonkey extension](https://www.tampermonkey.net/) (choose the browser you're using and follow the steps). When it's done, install both **Pi Browser** and **Pi Browser - Iframe** scripts [here](https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js) and [here](https://github.com/b-derouet/pi-browser/raw/main/pi-browser-iframe.user.js) (it will open the Tampermonkey dashboard with the script you want to install, just click on the install button to save it in your browser).
+
+**Note:** Make sure you have both **Pi Browser** and **Pi Browser - Iframe** scripts installed!
 
 Now you can go to the [Pi App website](https://app-cdn.minepi.com) and wait a little until the Pi Node login page appears, then connect into your account as if you were using the Pi Node app on your computer.
 

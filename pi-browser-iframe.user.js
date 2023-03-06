@@ -7,6 +7,8 @@
 // @match        https://app-cdn.minepi.com/*
 // @match        https://*.piappengine.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=minepi.com
+// @updateURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser-iframe.user.js
+// @downloadURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser-iframe.user.js
 // @run-at       document-start
 // @unwrap
 // @grant        none

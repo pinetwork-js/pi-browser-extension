@@ -6,6 +6,8 @@
 // @author       B. Derouet (https://github.com/b-derouet)
 // @match        https://app-cdn.minepi.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=minepi.com
+// @updateURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js
+// @downloadURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js
 // @run-at       document-idle
 // @noframes
 // @unwrap

@@ -11,7 +11,7 @@
 // @unwrap
 // @grant        none
 // ==/UserScript==
-/* eslint-disable unicorn/prefer-top-level-await */
+/* eslint-disable unicorn/prefer-top-level-await, sonarjs/cognitive-complexity */
 (async () => {
 	if (!localStorage.getItem('@pi:webview_ui_behaviors')) {
 		const config = {
@@ -34,6 +34,42 @@
 		const elements = [...body.children];
 
 		return elements.length === 1 ? elements[0] : elements;
+	}
+
+	function realURLtoPiURL(url) {
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/welcome')) {
+			return 'pi://welcome.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/chat')) {
+			return 'pi://chat.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/wallet')) {
+			return 'pi://wallet.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/feed')) {
+			return 'pi://mine.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/brainstorm')) {
+			return 'pi://brainstorm.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/kyc')) {
+			return 'pi://kyc.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/devportal')) {
+			return 'pi://develop.pi';
+		}
+
+		if (url.startsWith('https://minepi.com/blockexplorer')) {
+			return 'pi://blockchain.pi';
+		}
+
+		return url.replace('https://', 'pi://');
 	}
 
 	if (pageURL.startsWith('https://app-cdn.minepi.com/browser')) {
@@ -72,6 +108,9 @@
 		const iframe = createElement(
 			`<iframe src="${securedUrl}" allow="clipboard-read; clipboard-write; camera" style="width: 100vw; height: 100vh; border: none;"></iframe>`,
 		);
+
+		const urlToShow = realURLtoPiURL(securedUrl);
+		window.history.replaceState({}, '', `/browser?url=${urlToShow}`);
 
 		main.append(iframe);
 	}

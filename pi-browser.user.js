@@ -52,7 +52,10 @@
 			return 'pi://wallet.pi';
 		}
 
-		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/feed')) {
+		if (
+			url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/feed') ||
+			url === 'https://app-cdn.minepi.com/mobile-app-ui/'
+		) {
 			return 'pi://mine.pi';
 		}
 

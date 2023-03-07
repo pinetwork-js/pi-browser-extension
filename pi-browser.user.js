@@ -19,6 +19,7 @@
 		const config = {
 			platform: { desktop: true, os: 'win32', version: '10.0.0', arch: 'x64', uuid: '', hostApp: 'pi-node' },
 			bundleData: { versionNumber: '0.4.5', buildNumber: 'proton', bundleIdentifier: 'com.pinetwork.desktop' },
+			nativeSupport: { requestPermissions: true, inlineMediaPlayback: true },
 		};
 
 		localStorage.setItem('@pi:webview_ui_behaviors', JSON.stringify(config));

@@ -6,7 +6,7 @@
 // @author       B. Derouet (https://github.com/b-derouet)
 // @match        https://app-cdn.minepi.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=minepi.com
-// @updateURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js
+// @updateURL    https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js
 // @downloadURL  https://github.com/b-derouet/pi-browser/raw/main/pi-browser.user.js
 // @run-at       document-idle
 // @noframes
@@ -104,7 +104,7 @@
 		const userToken = localStorage.getItem('mobile-app-webview-ui_access-token');
 		const appRequest = await fetch(`https://socialchain.app/api/mobile_app/resolved_url?q=${appHostname}`, {
 			headers: { Authorization: userToken },
-		});
+		}).catch();
 		const appData = await appRequest.json();
 		const securedUrl = appData.redirect_url
 			? appData.redirect_url.replace('http://', 'https://') + new URL(url).pathname

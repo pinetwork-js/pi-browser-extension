@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pi Browser - Iframe
 // @namespace    https://github.com/b-derouet/pi-browser
-// @version      1.0
+// @version      1.1
 // @description  Script to configurate Pi apps inside Pi Browser iframe
 // @author       B. Derouet (https://github.com/b-derouet)
 // @match        https://app-cdn.minepi.com/*

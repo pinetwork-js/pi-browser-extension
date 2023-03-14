@@ -71,6 +71,14 @@
 			return 'pi://develop.pi';
 		}
 
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/translate')) {
+			return 'pi://translate.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/platform-demo-app')) {
+			return 'pi://demo.pi';
+		}
+
 		if (url.startsWith('https://minepi.com/blockexplorer')) {
 			return 'pi://blockchain.pi';
 		}

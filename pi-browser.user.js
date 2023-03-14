@@ -125,7 +125,10 @@
 			`<iframe src="${securedUrl}" allow="clipboard-read; clipboard-write; camera" style="width: 100vw; height: 100vh; border: none;"></iframe>`,
 		);
 
-		const urlToShow = realURLtoPiURL(securedUrl);
+		const temporaryUrlToShow = securedUrl.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/')
+			? url
+			: securedUrl;
+		const urlToShow = realURLtoPiURL(temporaryUrlToShow);
 		window.history.replaceState({}, '', `/browser?url=${urlToShow}`);
 
 		main.append(iframe);

@@ -67,7 +67,9 @@
 									},
 								});
 							}
-						} finally {
+
+							this.send(body);
+						} catch {
 							this.send(body);
 						}
 					},
@@ -93,7 +95,7 @@
 							xhr[key] = value;
 						}
 
-						return value;
+						return true;
 					},
 				});
 			};

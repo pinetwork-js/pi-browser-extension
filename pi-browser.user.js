@@ -59,6 +59,10 @@
 			return 'pi://mine.pi';
 		}
 
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/error')) {
+			return 'pi://error.pi';
+		}
+
 		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/brainstorm')) {
 			return 'pi://brainstorm.pi';
 		}
@@ -77,6 +81,10 @@
 
 		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/platform-demo-app')) {
 			return 'pi://demo.pi';
+		}
+
+		if (url.startsWith('https://app-cdn.minepi.com/mobile-app-ui/app/ecosystem')) {
+			return 'pi://testnetecosystem.pi';
 		}
 
 		if (url.startsWith('https://minepi.com/blockexplorer')) {

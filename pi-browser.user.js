@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pi Browser
 // @namespace    https://github.com/b-derouet/pi-browser
-// @version      1.1
+// @version      1.1.1
 // @description  Script to recreate the Pi Browser app within a browser on your computer
 // @author       B. Derouet (https://github.com/b-derouet)
 // @match        https://app-cdn.minepi.com/*

@@ -1,4 +1,7 @@
 {
+  "workspaces": [
+    "scripts/*"
+  ],
   "name": "pi-browser",
   "version": "1.0.0",
   "description": "Script to recreate the Pi Browser app within a browser on your computer",

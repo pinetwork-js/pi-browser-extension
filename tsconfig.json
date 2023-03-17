@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"strict": true,
+		"target": "ESNext",
+		"lib": ["DOM", "ES5"],
+		"outDir": "dist",
+		"declaration": true,
+		"module": "ESNext"
+	},
+	"include": ["scripts/**/*"],
+}

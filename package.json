@@ -16,15 +16,15 @@
     "url": "https://github.com/B-Derouet/Pi-Browser/issues"
   },
   "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.5.0",
   "devDependencies": {
-    "eslint": "^8.34.0",
+    "eslint": "^8.36.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-sonarjs": "^0.18.0",
-    "eslint-plugin-unicorn": "^45.0.2",
+    "eslint-plugin-unicorn": "^46.0.0",
     "prettier": "^2.8.4"
   }
 }

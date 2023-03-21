@@ -1,0 +1,39 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - "*"
+      - main
+    paths-ignore:
+      - "*.{md,txt}"
+      - LICENSE
+      - .*config
+      - .vscode
+    tags-ignore:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+    paths-ignore:
+      - "*.{md,txt}"
+      - LICENSE
+      - .*config
+      - .vscode
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint
+        run: yarn lint

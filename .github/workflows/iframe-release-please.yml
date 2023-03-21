@@ -1,0 +1,42 @@
+name: Pi Browser Extension Iframe Release Please
+on:
+  push:
+    branches: [main]
+    paths: [scripts/iframe/**]
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          default-branch: main
+          pull-request-title-pattern: "chore${scope}: release${component} v${version}"
+          monorepo-tags: true
+          bump-minor-pre-major: true
+          path: scripts/iframe
+          changelog-types: '[{"type":"feat","section":"Features"},{"type":"fix","section":"Bug Fixes"},{"type":"perf","section":"Performance Improvements"},{"type":"deps","section":"Dependencies"},{"type":"revert","section":"Reverts"},{"type":"docs","section":"Documentation"},{"type":"style","section":"Styles","hidden":true},{"type":"chore","section":"Miscellaneous Chores","hidden":true},{"type":"refactor","section":"Code Refactoring","hidden":true},{"type":"test","section":"Tests","hidden":true},{"type":"ci","section":"Continuous Integration","hidden":true}]'
+
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: yarn workspace iframe install --immutable
+
+      - name: Build script
+        run: yarn workspace iframe build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: scripts/iframe/dist
+          "target-folder": iframe

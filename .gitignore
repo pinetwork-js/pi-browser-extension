@@ -35,3 +35,5 @@ pids
 
 # Output of 'npm pack'
 *.tgz
+
+dist

@@ -2,12 +2,14 @@
   "workspaces": [
     "scripts/*"
   ],
-  "name": "pi-browser",
-  "version": "1.0.0",
+  "name": "pi-browser-extension",
   "description": "Script to recreate the Pi Browser app within a browser on your computer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint scripts/ --ext=.ts",
+    "lint:fix": "eslint scripts/ --ext=.ts --fix",
+    "format:check": "prettier --check 'scripts/**/**.ts'",
+    "format:write": "prettier --write 'scripts/**/**.ts'"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,9 @@
   },
   "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
   "packageManager": "yarn@3.5.0",
+  "dependencies": {
+    "@zero-dependency/dom": "^0.12.0"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
@@ -32,6 +37,8 @@
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-unicorn": "^46.0.0",
     "prettier": "^2.8.4",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "vite": "^4.2.0",
+    "vite-userscript-plugin": "^1.7.2"
   }
 }

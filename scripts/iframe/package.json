@@ -1,0 +1,17 @@
+{
+	"name": "iframe",
+	"version": "1.1.0",
+	"description": "Script to recreate the Pi Browser app within a browser",
+	"type": "module",
+	"packageManager": "yarn@3.5.0",
+	"scripts": {
+		"dev": "vite build --watch --mode development",
+		"build": "vite build"
+	},
+	"author": "B-Derouet <brewal_derouet@hotmail.fr>",
+	"license": "MIT",
+	"devDependencies": {
+		"vite": "^4.2.0",
+		"vite-userscript-plugin": "^1.7.2"
+	}
+}

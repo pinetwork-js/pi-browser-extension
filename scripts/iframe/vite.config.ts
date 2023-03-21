@@ -1,0 +1,26 @@
+import { defineConfig } from 'vite';
+import Userscript from 'vite-userscript-plugin';
+import { author, description, license, name, version } from './package.json';
+
+export default defineConfig(() => ({
+	plugins: [
+		Userscript({
+			entry: 'src/index.ts',
+			header: {
+				name: `pi-browser-extension-${name}`,
+				description,
+				version,
+				namespace: 'https://github.com/pinetwork-js/pi-browser-extension',
+				author,
+				license,
+				icon64: 'https://www.google.com/s2/favicons?sz=64&domain=minepi.com',
+				match: ['https://app-cdn.minepi.com/*', 'https://*.piappengine.com/*'],
+				'run-at': 'document-start',
+				unwrap: true,
+			},
+			server: {
+				port: 2000,
+			},
+		}),
+	],
+}));

@@ -1,0 +1,20 @@
+{
+	"name": "core",
+	"version": "1.1.1",
+	"description": "Script to configurate Pi Apps inside Pi Browser iframe",
+	"type": "module",
+	"packageManager": "yarn@3.5.0",
+	"scripts": {
+		"dev": "vite build --watch --mode development",
+		"build": "vite build"
+	},
+	"author": "B-Derouet <brewal_derouet@hotmail.fr>",
+	"license": "MIT",
+	"dependencies": {
+		"@zero-dependency/dom": "^0.12.0"
+	},
+	"devDependencies": {
+		"vite": "^4.2.0",
+		"vite-userscript-plugin": "^1.7.2"
+	}
+}

@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/B-Derouet/Pi-Browser.git"
+    "url": "git+https://github.com/pinetwork-js/pi-browser-extension.git"
   },
   "author": "B-Derouet <brewal_derouet@hotmail.fr>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/B-Derouet/Pi-Browser/issues"
+    "url": "https://github.com/pinetwork-js/pi-browser-extension/issues"
   },
-  "homepage": "https://github.com/B-Derouet/Pi-Browser#readme",
+  "homepage": "https://github.com/pinetwork-js/pi-browser-extension#readme",
   "packageManager": "yarn@3.5.0",
   "dependencies": {
     "@zero-dependency/dom": "^0.12.0"

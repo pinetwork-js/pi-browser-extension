@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import Userscript from 'vite-userscript-plugin';
-import { author, description, license, name, version } from './package.json';
+import { author, description, homepage, license, name, version } from './package.json';
 
 export default defineConfig(() => ({
 	plugins: [
@@ -11,6 +11,7 @@ export default defineConfig(() => ({
 				description,
 				version,
 				namespace: 'https://github.com/pinetwork-js/pi-browser-extension',
+				homepage,
 				author,
 				license,
 				icon64: 'https://www.google.com/s2/favicons?sz=64&domain=minepi.com',

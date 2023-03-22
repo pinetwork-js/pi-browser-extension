@@ -1,0 +1,30 @@
+name: Pi Browser Extension Core GitHub Pages
+on:
+  push:
+    branches: [main]
+    paths: [scripts/core/**]
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: yarn workspace core install --immutable
+
+      - name: Build script
+        run: yarn workspace core build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: scripts/core/dist
+          "target-folder": core

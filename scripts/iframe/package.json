@@ -2,7 +2,7 @@
 	"name": "iframe",
 	"private": true,
 	"homepage": "https://pinetwork-js.github.io/pi-browser-extension/iframe/",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Script to recreate the Pi Browser app within a browser",
 	"type": "module",
 	"packageManager": "yarn@3.5.0",

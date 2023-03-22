@@ -2,7 +2,7 @@
 	"name": "core",
 	"private": true,
 	"homepage": "https://pinetwork-js.github.io/pi-browser-extension/core/",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Script to configurate Pi Apps inside Pi Browser iframe",
 	"type": "module",
 	"packageManager": "yarn@3.5.0",

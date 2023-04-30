@@ -8,7 +8,7 @@ const apps: Record<string, string> = {
 	ecosystem: 'pi://testnetecosystem.pi',
 };
 
-const pageRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:$|\/)/;
+const pageRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
 export const pages: Record<string, string> = {
 	welcome: 'pi://welcome.pi',
 	chat: 'pi://chat.pi',

@@ -6,12 +6,13 @@ const apps: Record<string, string> = {
 	translate: 'pi://translate.pi',
 	'platform-demo-app': 'pi://demo.pi',
 	ecosystem: 'pi://testnetecosystem.pi',
+	chat: 'pi://chat.pi',
 };
 
 const pageRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
 export const pages: Record<string, string> = {
 	welcome: 'pi://welcome.pi',
-	chat: 'pi://chat.pi',
+	chat: 'pi://_LEGACY_chat.pi',
 	wallet: 'pi://wallet.pi',
 	feed: 'pi://mine.pi',
 	'': 'pi://mine.pi',

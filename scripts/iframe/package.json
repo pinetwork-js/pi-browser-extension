@@ -13,7 +13,7 @@
 	"author": "B-Derouet <brewal_derouet@hotmail.fr>",
 	"license": "MIT",
 	"devDependencies": {
-		"vite": "^4.2.0",
-		"vite-userscript-plugin": "^1.7.2"
+		"vite": "^4.3.9",
+		"vite-userscript-plugin": "^1.8.1"
 	}
 }

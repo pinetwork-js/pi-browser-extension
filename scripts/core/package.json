@@ -13,10 +13,10 @@
 	"author": "B-Derouet <brewal_derouet@hotmail.fr>",
 	"license": "MIT",
 	"dependencies": {
-		"@zero-dependency/dom": "^0.12.0"
+		"@zero-dependency/dom": "^1.6.0"
 	},
 	"devDependencies": {
-		"vite": "^4.2.0",
-		"vite-userscript-plugin": "^1.7.2"
+		"vite": "^4.3.9",
+		"vite-userscript-plugin": "^1.8.1"
 	}
 }

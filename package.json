@@ -21,7 +21,7 @@
     "url": "https://github.com/pinetwork-js/pi-browser-extension/issues"
   },
   "homepage": "https://github.com/pinetwork-js/pi-browser-extension#readme",
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.6.0",
   "dependencies": {
     "@zero-dependency/dom": "^0.12.0"
   },

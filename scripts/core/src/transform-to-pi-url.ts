@@ -7,6 +7,7 @@ const apps: Record<string, string> = {
 	'platform-demo-app': 'pi://demo.pi',
 	ecosystem: 'pi://testnetecosystem.pi',
 	chat: 'pi://chat.pi',
+	fireside: 'pi://fireside.pinet.com',
 };
 
 const pageRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;

@@ -4,5 +4,5 @@ export function getUrlFromLink() {
 	const url = new URL(window.location.href);
 	const urlParameter = url.searchParams.get('url');
 
-	return urlParameter?.replace('pi://', 'https://') ?? pages.welcome;
+	return (urlParameter ?? pages.welcome).replace('pi://', 'https://');
 }

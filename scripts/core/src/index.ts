@@ -1,20 +1,9 @@
-import { domReady } from '@zero-dependency/dom';
-import { setupConfig } from './setup-config';
-import { setupBrowser } from './setup-browser';
+import { script } from './script';
 
-/* eslint-disable-next-line unicorn/prefer-top-level-await */
-domReady().then(() => {
-	if (!localStorage.getItem('@pi:webview_ui_behaviors')) {
-		setupConfig();
-	}
-
-	if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/close.html') {
-		window.location.href = 'https://app-cdn.minepi.com/mobile-app-ui/node-signin';
-	}
-
-	if (!window.location.href.startsWith('https://app-cdn.minepi.com/browser')) {
-		return;
-	}
-
-	setupBrowser();
-});
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', () => script(), {
+		once: true,
+	});
+} else {
+	script();
+}

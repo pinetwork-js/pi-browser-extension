@@ -1,13 +1,23 @@
-import { proxy } from './requestProxy';
+import { fixBlockchainButton } from './fix-blockchain-button';
+import { setupHistoryProxy } from './setup-history-proxy';
 
 export function setupNavigationUpdate() {
 	window.addEventListener('message', (event) => {
 		if (event.data.type === '@pi:browser:init_navigation') {
-			const OriginalXHR = window.XMLHttpRequest;
+			window.addEventListener('locationchange', () => {
+				if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/welcome/') {
+					fixBlockchainButton();
+				}
 
-			window.XMLHttpRequest = function XMLHttpRequest() {
-				return new Proxy(new OriginalXHR(), proxy);
-			} as unknown as typeof OriginalXHR;
+				window.parent.postMessage({
+					type: '@pi:browser:navigation_change',
+					payload: {
+						url: window.location.href,
+					},
+				});
+			});
+
+			setupHistoryProxy();
 		}
 	});
 }

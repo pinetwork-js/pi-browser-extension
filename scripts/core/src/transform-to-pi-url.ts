@@ -1,4 +1,4 @@
-export const appRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)/;
+export const appRegex = /^pi:\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)/;
 const apps: Record<string, string> = {
 	brainstorm: 'pi://brainstorm.pi',
 	kyc: 'pi://kyc.pi',
@@ -10,13 +10,12 @@ const apps: Record<string, string> = {
 	fireside: 'pi://fireside.pinet.com',
 };
 
-const pageRegex = /^(?:pi|https?):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
+const pageRegex = /^pi:\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
 export const pages: Record<string, string> = {
 	welcome: 'pi://welcome.pi',
 	chat: 'pi://_LEGACY_chat.pi',
 	wallet: 'pi://wallet.pi',
 	feed: 'pi://mine.pi',
-	'': 'pi://mine.pi',
 	error: 'pi://error.pi',
 };
 
@@ -32,10 +31,10 @@ export function transformToPiURL(url: string) {
 	if (pageRegex.test(piUrl)) {
 		const [, pageName] = pageRegex.exec(piUrl) ?? [];
 
-		return pageName in pages ? pages[pageName] : piUrl;
+		return pageName in pages ? pages[pageName] : pages.feed;
 	}
 
-	if (piUrl.startsWith('https://minepi.com/blockexplorer')) {
+	if (piUrl.startsWith('pi://blockexplorer.minepi.com/') || piUrl.startsWith('pi://minepi.com/blockexplorer/')) {
 		return 'pi://blockchain.pi';
 	}
 

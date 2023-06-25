@@ -19,5 +19,9 @@ export function setupNavigationUpdate() {
 
 			setupHistoryProxy();
 		}
+
+		if (event.data.type === '@pi:browser:navigation_change') {
+			window.parent.postMessage(event.data);
+		}
 	});
 }

@@ -14,7 +14,7 @@ export function setupNavigationUpdate(iframe: HTMLIFrameElement) {
 				navigateToUrl(event.data.payload.url);
 			}
 
-			showUrl(event.data.payload.url);
+			showUrl(event.data.payload.url, event.data.payload.action);
 		}
 	});
 }

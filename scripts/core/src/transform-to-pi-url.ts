@@ -1,4 +1,4 @@
-export const appRegex = /^pi:\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)/;
+export const appRegex = /^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)/;
 const apps: Record<string, string> = {
 	brainstorm: 'pi://brainstorm.pi',
 	kyc: 'pi://kyc.pi',
@@ -10,7 +10,7 @@ const apps: Record<string, string> = {
 	fireside: 'pi://fireside.pinet.com',
 };
 
-const pageRegex = /^pi:\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
+const pageRegex = /^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
 export const pages: Record<string, string> = {
 	welcome: 'pi://welcome.pi',
 	chat: 'pi://_LEGACY_chat.pi',

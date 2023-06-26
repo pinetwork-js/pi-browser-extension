@@ -12,10 +12,7 @@ export async function script() {
 	}
 
 	if (window.parent !== window.top) {
-		document.addEventListener('DOMContentLoaded', () => configUserAgent(), {
-			once: true,
-		});
-
+		configUserAgent();
 		overrideOpen();
 
 		return;

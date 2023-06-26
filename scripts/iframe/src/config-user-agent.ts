@@ -11,9 +11,6 @@ export function configUserAgent() {
 		Object.defineProperty(window.navigator, 'userAgent', userAgentProperty);
 		Object.defineProperty(window.navigator, 'vendor', vendorProperty);
 	} catch {
-		window.navigator = Object.create(navigator, {
-			userAgent: userAgentProperty,
-			vendor: vendorProperty,
-		});
+		console.log('Failed to override user agent');
 	}
 }

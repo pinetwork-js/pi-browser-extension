@@ -15,7 +15,7 @@ export default defineConfig(() => ({
 				author,
 				license,
 				icon64: 'https://www.google.com/s2/favicons?sz=64&domain=minepi.com',
-				match: ['https://app-cdn.minepi.com/*', 'https://*.piappengine.com/*'],
+				match: '*://*/*',
 				'run-at': 'document-start',
 				unwrap: true,
 			},

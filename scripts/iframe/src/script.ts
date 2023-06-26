@@ -1,8 +1,10 @@
+import { waitElement } from '@zero-dependency/dom';
 import { configUserAgent } from './config-user-agent';
-import { setupNavigationUpdate } from './setup-navigation-update';
 import { fixBlockchainButton } from './fix-blockchain-button';
-import { overrideOpen } from './override-open';
 import { fixGoBackButton } from './fix-go-back-button';
+import { overrideOpen } from './override-open';
+import { removeMenu } from './remove-menu';
+import { setupNavigationUpdate } from './setup-navigation-update';
 
 export async function script() {
 	if (window.self === window.top) {
@@ -19,6 +21,13 @@ export async function script() {
 		return;
 	}
 
+	if (window.origin !== 'https://app-cdn.minepi.com') {
+		return;
+	}
+
+	const main = await waitElement<HTMLElement>('main');
+
+	removeMenu(main);
 	setupNavigationUpdate();
 	fixGoBackButton();
 

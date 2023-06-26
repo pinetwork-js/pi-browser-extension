@@ -11,7 +11,6 @@ export function overrideOpen() {
 				type: '@pi:browser:navigation_change',
 				payload: {
 					url: stringUrl,
-					navigate: true,
 				},
 			},
 			'*',

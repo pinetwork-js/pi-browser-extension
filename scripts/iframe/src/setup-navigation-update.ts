@@ -1,4 +1,5 @@
 import { fixBlockchainButton } from './fix-blockchain-button';
+import { getAppUrl } from './get-app-url';
 import { setupHistoryProxy } from './setup-history-proxy';
 
 let superposeDisplayUrl = false;
@@ -31,6 +32,10 @@ export function setupNavigationUpdate() {
 		}
 
 		if (eventData.type === '@pi:browser:navigation_change') {
+			getAppUrl(eventData.payload.url).then((appUrl) => {
+				window.location.href = appUrl;
+			});
+
 			window.parent.postMessage(eventData);
 		}
 

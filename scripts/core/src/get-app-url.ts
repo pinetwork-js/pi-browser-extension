@@ -5,7 +5,14 @@ export async function getAppUrl(url: string) {
 		return url;
 	}
 
-	const appHostname = new URL(url).hostname;
+	let appHostname: string;
+
+	try {
+		appHostname = new URL(url).hostname;
+	} catch {
+		return `https://app-cdn.minepi.com/mobile-app-ui/error?url=${encodeURIComponent(url)}`;
+	}
+
 	const appRequest = await fetch(`https://socialchain.app/api/mobile_app/resolved_url?q=${appHostname}`, {
 		headers: { Authorization: userToken },
 	}).catch();

@@ -19,6 +19,8 @@ export const loginConfig = {
 
 const temporaryConfig = structuredClone(loginConfig);
 temporaryConfig.platform.hostApp = 'pi-browser';
+temporaryConfig.platform.desktop = false;
+temporaryConfig.platform.os = 'android';
 
 export const browserConfig = temporaryConfig;
 

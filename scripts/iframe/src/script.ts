@@ -8,6 +8,8 @@ import { setupNavigationUpdate } from './setup-navigation-update';
 
 export async function script() {
 	if (window.self === window.top) {
+		configUserAgent();
+
 		return;
 	}
 
@@ -22,10 +24,12 @@ export async function script() {
 		return;
 	}
 
+	configUserAgent();
+	setupNavigationUpdate();
+
 	const main = await waitElement<HTMLElement>('main');
 
 	removeMenu(main);
-	setupNavigationUpdate();
 	fixGoBackButton();
 
 	if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/welcome/') {

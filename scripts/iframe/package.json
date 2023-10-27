@@ -12,9 +12,6 @@
 	},
 	"author": "B-Derouet <brewal_derouet@hotmail.fr>",
 	"license": "MIT",
-	"dependencies": {
-		"@zero-dependency/dom": "^1.8.4"
-	},
 	"devDependencies": {
 		"vite": "^4.5.0",
 		"vite-userscript-plugin": "^1.10.0"

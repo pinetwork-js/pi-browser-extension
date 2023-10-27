@@ -495,15 +495,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zero-dependency/dom@npm:^1.8.4":
-  version: 1.8.4
-  resolution: "@zero-dependency/dom@npm:1.8.4"
-  dependencies:
-    csstype: "npm:3.1.2"
-  checksum: f59ff1e868d2ff842b67783fc72d0409a9b3456d577fb64a50bac236a967cca623ced99901593219cdb07e9b75982d3e156b57f5d83e71e95e232ac41fd1484c
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -979,7 +970,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "core@workspace:scripts/core"
   dependencies:
-    "@zero-dependency/dom": "npm:^1.8.4"
     vite: "npm:^4.5.0"
     vite-userscript-plugin: "npm:^1.10.0"
   languageName: unknown
@@ -993,13 +983,6 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: e1a13869d2f57d974de0d9ef7acbf69dc6937db20b918525a01dacb5032129bd552d290d886d981e99f1b624cb03657084cc87bd40f115c07ecf376821c729ce
-  languageName: node
-  linkType: hard
-
-"csstype@npm:3.1.2":
-  version: 3.1.2
-  resolution: "csstype@npm:3.1.2"
-  checksum: 1f39c541e9acd9562996d88bc9fb62d1cb234786ef11ed275567d4b2bd82e1ceacde25debc8de3d3b4871ae02c2933fa02614004c97190711caebad6347debc2
   languageName: node
   linkType: hard
 
@@ -2283,7 +2266,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "iframe@workspace:scripts/iframe"
   dependencies:
-    "@zero-dependency/dom": "npm:^1.8.4"
     vite: "npm:^4.5.0"
     vite-userscript-plugin: "npm:^1.10.0"
   languageName: unknown
@@ -3403,7 +3385,6 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^6.9.0"
     "@typescript-eslint/parser": "npm:^6.9.0"
-    "@zero-dependency/dom": "npm:^1.8.4"
     eslint: "npm:^8.52.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
     eslint-config-airbnb-typescript: "npm:^17.1.0"

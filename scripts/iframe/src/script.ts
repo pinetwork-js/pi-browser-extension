@@ -1,32 +1,17 @@
-import { configUserAgent } from './config-user-agent';
-import { fixBlockchainButton } from './fix-blockchain-button';
-import { fixGoBackButton } from './fix-go-back-button';
-import { overrideOpen } from './override-open';
-import { setupNavigationUpdate } from './setup-navigation-update';
+import { bottomIframe, middleIframe, topIframe } from './iframes';
 
 export async function script() {
 	if (window.self === window.top) {
-		configUserAgent();
+		topIframe();
 
 		return;
 	}
 
 	if (window.parent !== window.top) {
-		configUserAgent();
-		overrideOpen();
+		bottomIframe();
 
 		return;
 	}
 
-	if (window.origin !== 'https://app-cdn.minepi.com') {
-		return;
-	}
-
-	configUserAgent();
-	setupNavigationUpdate();
-	fixGoBackButton();
-
-	if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/welcome/') {
-		fixBlockchainButton();
-	}
+	middleIframe();
 }

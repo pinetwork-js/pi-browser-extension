@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        pi-browser-extension-iframe
 // @description Script to recreate the Pi Browser app within a browser
-// @version     1.2.1
+// @version     1.2.2
 // @namespace   https://github.com/pinetwork-js/pi-browser-extension
 // @homepage    https://pinetwork-js.github.io/pi-browser-extension/iframe/
 // @author      B-Derouet <brewal_derouet@hotmail.fr>

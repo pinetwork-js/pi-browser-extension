@@ -12,7 +12,7 @@ export const loginConfig = {
 		buildNumber: '26',
 	},
 	nativeSupport: {
-		requestPermissions: true,
+		requestPermission: true,
 		inlineMediaPlayback: true,
 	},
 };

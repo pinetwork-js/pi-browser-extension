@@ -7,6 +7,8 @@ export function script() {
 
 	if (!!token && userConfig !== JSON.stringify(browserConfig)) {
 		setupConfig(browserConfig);
+
+		window.location.reload();
 	} else if (!token && !loggedIn) {
 		setupConfig(loginConfig);
 

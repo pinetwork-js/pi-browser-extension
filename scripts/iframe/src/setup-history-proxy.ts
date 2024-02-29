@@ -1,5 +1,5 @@
 export function setupHistoryProxy() {
-	const oldPushState = window.history.pushState;
+	const oldPushState = window.history.pushState.bind(window.history);
 
 	window.history.pushState = function pushState(...arguments_) {
 		Reflect.apply(oldPushState, this, arguments_);
@@ -7,7 +7,7 @@ export function setupHistoryProxy() {
 		window.dispatchEvent(new Event('locationchange'));
 	};
 
-	const oldReplaceState = window.history.replaceState;
+	const oldReplaceState = window.history.replaceState.bind(window.history);
 
 	window.history.replaceState = function replaceState(...arguments_) {
 		Reflect.apply(oldReplaceState, this, arguments_);

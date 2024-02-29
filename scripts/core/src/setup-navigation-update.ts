@@ -1,15 +1,17 @@
+import { MessageType } from './messages/message-type';
+import type { ResponseMessage } from './messages/response-message';
 import { navigateToUrl } from './navigate-to-url';
 import { showUrl } from './show-url';
 
 export function setupNavigationUpdate(iframe: HTMLIFrameElement) {
 	iframe.addEventListener('load', () => {
 		iframe.contentWindow?.postMessage({
-			type: '@pi:browser:init_navigation',
+			type: MessageType.INIT_NAVIGATION,
 		});
 	});
 
-	window.addEventListener('message', (event) => {
-		if (event.data.type === '@pi:browser:navigation_change') {
+	window.addEventListener('message', (event: MessageEvent<ResponseMessage>) => {
+		if (event.data.type === MessageType.NAVIGATION_CHANGE) {
 			if (event.data.payload.navigate) {
 				navigateToUrl(event.data.payload.url);
 			}

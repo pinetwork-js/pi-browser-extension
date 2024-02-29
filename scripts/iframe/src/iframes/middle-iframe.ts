@@ -1,6 +1,8 @@
 import { configUserAgent } from '../config-user-agent';
 import { fixBlockchainButton } from '../fix-blockchain-button';
 import { fixGoBackButton } from '../fix-go-back-button';
+import { MessageType } from '../messages/message-type';
+import type { ResponseMessage } from '../messages/response-message';
 import { setupNavigationUpdate } from '../setup-navigation-update';
 
 export function middleIframe() {
@@ -8,16 +10,16 @@ export function middleIframe() {
 		return;
 	}
 
-	window.addEventListener('message', (event) => {
-		if (event.data.type === '@pi:browser:pi-app-detected') {
+	window.addEventListener('message', (event: MessageEvent<ResponseMessage>) => {
+		if (event.data.type === MessageType.PI_APP_DETECTED) {
 			const iframe = document.querySelector('iframe')?.contentWindow;
 
-			iframe?.postMessage({ type: '@pi:browser:pi-app-detected' }, '*');
+			iframe?.postMessage({ type: MessageType.PI_APP_DETECTED }, '*');
 			return;
 		}
 
-		if (event.data.type === '@pi:browser:pi-app-check') {
-			window.parent.postMessage({ type: '@pi:browser:pi-app-check' }, '*');
+		if (event.data.type === MessageType.PI_APP_CHECK) {
+			window.parent.postMessage({ type: MessageType.PI_APP_CHECK }, '*');
 		}
 	});
 

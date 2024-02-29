@@ -1,6 +1,6 @@
 import { bottomIframe, middleIframe, topIframe } from './iframes';
 
-export async function script() {
+export function script() {
 	if (window.self === window.top) {
 		topIframe();
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import { defineConfig } from 'vite';
 import Userscript from 'vite-userscript-plugin';
 import { author, description, homepage, license, name, version } from './package.json';

@@ -5,7 +5,7 @@
 	"version": "1.3.1",
 	"description": "Script to configurate Pi Apps inside Pi Browser iframe",
 	"type": "module",
-	"packageManager": "yarn@4.0.0",
+	"packageManager": "yarn@4.1.0",
 	"scripts": {
 		"dev": "vite build --watch --mode development",
 		"build": "vite build"

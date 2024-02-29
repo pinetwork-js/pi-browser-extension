@@ -5,7 +5,7 @@
 	"version": "1.2.2",
 	"description": "Script to recreate the Pi Browser app within a browser",
 	"type": "module",
-	"packageManager": "yarn@4.0.0",
+	"packageManager": "yarn@4.1.0",
 	"scripts": {
 		"dev": "vite build --watch --mode development",
 		"build": "vite build"

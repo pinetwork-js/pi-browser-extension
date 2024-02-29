@@ -1,3 +1,4 @@
+import { MessageType } from '../messages';
 import { waitElement } from '../wait-element';
 
 export async function fixBlockchainButton() {
@@ -6,7 +7,7 @@ export async function fixBlockchainButton() {
 
 	blockchainButton.addEventListener('click', () => {
 		window.parent.postMessage({
-			type: '@pi:browser:navigation_change',
+			type: MessageType.NAVIGATION_CHANGE,
 			payload: {
 				url: 'https://blockexplorer.minepi.com/',
 				navigate: true,

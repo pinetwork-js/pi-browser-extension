@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        pi-browser-extension-core
 // @description Script to configurate Pi Apps inside Pi Browser iframe
-// @version     1.3.1
+// @version     1.4.0
 // @namespace   https://github.com/pinetwork-js/pi-browser-extension
 // @homepage    https://pinetwork-js.github.io/pi-browser-extension/core/
 // @author      B-Derouet <brewal_derouet@hotmail.fr>

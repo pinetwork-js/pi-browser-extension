@@ -31,7 +31,7 @@ export function transformToPiURL(url: string) {
 	if (pageRegex.test(piUrl)) {
 		const [, pageName] = pageRegex.exec(piUrl) ?? [];
 
-		return pageName in pages ? pages[pageName] : pages.feed;
+		return pageName in pages ? pages[pageName] : pages.welcome;
 	}
 
 	if (piUrl.startsWith('pi://blockexplorer.minepi.com/') || piUrl.startsWith('pi://minepi.com/blockexplorer/')) {

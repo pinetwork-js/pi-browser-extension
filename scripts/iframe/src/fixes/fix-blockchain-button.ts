@@ -1,4 +1,4 @@
-import { waitElement } from './wait-element';
+import { waitElement } from '../wait-element';
 
 export async function fixBlockchainButton() {
 	const appList = await waitElement<HTMLButtonElement>('div[data-testid=app-list]');

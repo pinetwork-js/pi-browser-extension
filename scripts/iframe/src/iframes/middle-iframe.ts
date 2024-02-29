@@ -1,9 +1,7 @@
 import { configUserAgent } from '../config-user-agent';
-import { fixBlockchainButton } from '../fix-blockchain-button';
-import { fixGoBackButton } from '../fix-go-back-button';
-import { MessageType } from '../messages/message-type';
-import type { ResponseMessage } from '../messages/response-message';
-import { setupNavigationUpdate } from '../setup-navigation-update';
+import { fixGoBackButton, fixBlockchainButton } from '../fixes';
+import { MessageType, type ResponseMessage } from '../messages';
+import { setupNavigationUpdate } from '../setup';
 
 export function middleIframe() {
 	if (window.origin !== 'https://app-cdn.minepi.com') {

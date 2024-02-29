@@ -1,7 +1,6 @@
-import { MessageType } from './messages/message-type';
-import type { ResponseMessage } from './messages/response-message';
-import { navigateToUrl } from './navigate-to-url';
-import { showUrl } from './show-url';
+import { MessageType, type ResponseMessage } from '../messages';
+import { navigateToUrl } from '../navigate-to-url';
+import { showUrl } from '../show-url';
 
 export function setupNavigationUpdate(iframe: HTMLIFrameElement) {
 	iframe.addEventListener('load', () => {

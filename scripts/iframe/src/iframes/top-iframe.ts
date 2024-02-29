@@ -1,6 +1,5 @@
 import { configUserAgent } from '../config-user-agent';
-import { MessageType } from '../messages/message-type';
-import type { ResponseMessage } from '../messages/response-message';
+import { MessageType, type ResponseMessage } from '../messages';
 
 export function topIframe() {
 	if (window.origin !== 'https://app-cdn.minepi.com') {

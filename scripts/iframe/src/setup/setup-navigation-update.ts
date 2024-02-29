@@ -1,7 +1,6 @@
-import { fixBlockchainButton } from './fix-blockchain-button';
-import { getAppUrl } from './get-app-url';
-import { MessageType } from './messages/message-type';
-import type { ResponseMessage } from './messages/response-message';
+import { fixBlockchainButton } from '../fixes';
+import { getAppUrl } from '../get-app-url';
+import { MessageType, type ResponseMessage } from '../messages';
 import { setupHistoryProxy } from './setup-history-proxy';
 
 let superposeDisplayUrl = false;

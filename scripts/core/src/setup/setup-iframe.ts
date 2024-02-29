@@ -1,4 +1,4 @@
-import { createElement } from './create-element';
+import { createElement } from '../create-element';
 import { setupNavigationUpdate } from './setup-navigation-update';
 
 export function setupIframe(root: HTMLElement, appUrl: string) {

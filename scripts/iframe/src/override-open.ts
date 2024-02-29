@@ -1,3 +1,5 @@
+import { MessageType } from './messages';
+
 export function overrideOpen() {
 	window.open = (url?: URL | string) => {
 		if (!url) {
@@ -8,7 +10,7 @@ export function overrideOpen() {
 
 		window.parent.postMessage(
 			{
-				type: '@pi:browser:navigation_change',
+				type: MessageType.NAVIGATION_CHANGE,
 				payload: {
 					url: stringUrl,
 				},

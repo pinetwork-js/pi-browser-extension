@@ -1,5 +1,4 @@
-import { setupBrowser } from './setup-browser';
-import { browserConfig, loginConfig, setupConfig } from './setup-config';
+import { setupBrowser, browserConfig, loginConfig, setupConfig } from './setup';
 
 export function script() {
 	const userConfig = localStorage.getItem('@pi:webview_ui_behaviors');

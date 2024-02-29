@@ -1,6 +1,5 @@
 import { configUserAgent } from '../config-user-agent';
-import { MessageType } from '../messages/message-type';
-import type { ResponseMessage } from '../messages/response-message';
+import { MessageType, type ResponseMessage } from '../messages';
 import { overrideOpen } from '../override-open';
 
 export function bottomIframe() {

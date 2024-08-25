@@ -21,7 +21,7 @@
     "url": "https://github.com/pinetwork-js/pi-browser-extension/issues"
   },
   "homepage": "https://github.com/pinetwork-js/pi-browser-extension#readme",
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.4.1",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",

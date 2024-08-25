@@ -1,7 +1,7 @@
 export function configUserAgent() {
 	const userAgentProperty = {
 		get: () =>
-			'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.90 Mobile Safari/537.36 PiBrowser/1.8.0',
+			'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.88 Mobile Safari/537.36 PiBrowser/1.11.0',
 	};
 	const vendorProperty = {
 		get: () => 'Google Inc.',

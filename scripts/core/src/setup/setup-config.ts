@@ -8,8 +8,8 @@ export const loginConfig = {
 		hostApp: 'pi-node',
 	},
 	bundleData: {
-		versionNumber: '1.8.0',
-		buildNumber: '30',
+		versionNumber: '1.11.0',
+		buildNumber: '33',
 	},
 	nativeSupport: {
 		requestPermission: true,

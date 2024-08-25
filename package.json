@@ -7,9 +7,10 @@
 	"main": "index.js",
 	"scripts": {
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
-		"format:check": "prettier --check .",
-		"format:write": "prettier --write ."
+		"lint-staged": "lint-staged",
+		"format": "prettier --write .",
+		"typecheck": "tsc --noEmit",
+		"postinstall": "husky"
 	},
 	"repository": {
 		"type": "git",
@@ -35,6 +36,8 @@
 		"eslint-plugin-sonarjs": "^1.0.4",
 		"eslint-plugin-unicorn": "^55.0.0",
 		"globals": "^15.9.0",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.9",
 		"prettier": "^3.3.3",
 		"typescript": "^5.5.4",
 		"typescript-eslint": "^8.2.0",

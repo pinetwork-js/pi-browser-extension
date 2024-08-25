@@ -27,4 +27,4 @@ jobs:
         with:
           branch: gh-pages
           folder: scripts/iframe/dist
-          "target-folder": iframe
+          'target-folder': iframe

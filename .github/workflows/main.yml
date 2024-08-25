@@ -2,20 +2,20 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - "*"
+      - '*'
       - main
     paths-ignore:
-      - "*.{md,txt}"
+      - '*.{md,txt}'
       - LICENSE
       - .*config
       - .vscode
     tags-ignore:
-      - "*"
+      - '*'
   pull_request:
     branches:
-      - "*"
+      - '*'
     paths-ignore:
-      - "*.{md,txt}"
+      - '*.{md,txt}'
       - LICENSE
       - .*config
       - .vscode

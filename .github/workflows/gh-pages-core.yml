@@ -27,4 +27,4 @@ jobs:
         with:
           branch: gh-pages
           folder: scripts/core/dist
-          "target-folder": core
+          'target-folder': core

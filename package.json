@@ -9,7 +9,6 @@
 		"lint": "eslint .",
 		"lint-staged": "lint-staged",
 		"format": "prettier --write .",
-		"typecheck": "tsc --noEmit",
 		"postinstall": "husky"
 	},
 	"repository": {

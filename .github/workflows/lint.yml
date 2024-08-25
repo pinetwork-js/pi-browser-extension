@@ -1,14 +1,14 @@
-name: Continuous Integration
+name: Lint
 on:
   push:
     branches:
       - '*'
-      - main
+    branches-ignore:
+      - 'gh-pages'
     paths-ignore:
       - '*.{md,txt}'
       - LICENSE
       - .*config
-      - .vscode
     tags-ignore:
       - '*'
   pull_request:
@@ -18,19 +18,19 @@ on:
       - '*.{md,txt}'
       - LICENSE
       - .*config
-      - .vscode
 
 jobs:
-  main:
+  lint:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
-      - name: Use Node.js v18
-        uses: actions/setup-node@v3
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: yarn
 
       - name: Install dependencies
         run: yarn install --immutable

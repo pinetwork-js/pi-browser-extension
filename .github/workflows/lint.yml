@@ -1,8 +1,6 @@
 name: Lint
 on:
   push:
-    branches:
-      - '*'
     branches-ignore:
       - 'gh-pages'
     paths-ignore:

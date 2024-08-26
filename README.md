@@ -12,7 +12,7 @@ Now you can go to the [Pi App website](https://app-cdn.minepi.com) and wait a li
 
 **Note:** You cannot manipulate/monitor your node in the browser, this must be done in the Pi Node app!
 
-When you're logged in, you can go to the [Pi Browser homepage](https://app-cdn.minepi.com/browser?url=pi://welcome.pi). If you want to go to your app within Pi Browser, go to https://app-cdn.minepi.com/browser?url=URL_OF_YOUR_APP (url parameter must start with `http://`, `https://` or `pi://`)
+When you're logged in, you can go to the [Pi Browser homepage](https://app-cdn.minepi.com/browser?url=pinet.com). If you want to go to your app within Pi Browser, go to https://app-cdn.minepi.com/browser?url=URL_OF_YOUR_APP
 
 **Note:** You can bookmark the Pi Browser homepage to find it more easily later!
 

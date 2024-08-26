@@ -5,7 +5,11 @@ export function getUrlFromLink() {
 	const urlParameter = url.searchParams.get('url');
 
 	if (!urlParameter) {
-		return pages.welcome.replace('pi://', 'https://');
+		return `https://${pages.home}`;
+	}
+
+	if (!urlParameter.startsWith('pi://') && !urlParameter.startsWith('https://')) {
+		return `https://${urlParameter}`;
 	}
 
 	return urlParameter.replace('pi://', 'https://');

@@ -1,21 +1,23 @@
-export const appRegex = /^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)/;
+export const appRegex =
+	/^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/app\/(.*?)(?:$|\/)|^(?:(?:pi|https):\/\/|)(.*?)\.pinet\.com/;
 const apps: Record<string, string> = {
-	brainstorm: 'pi://brainstorm.pi',
-	kyc: 'pi://kyc.pi',
-	devportal: 'pi://develop.pi',
+	brainstorm: 'brainstorm.pinet.com',
+	kyc: 'kyc.pinet.com',
+	devportal: 'develop.pinet.com',
 	translate: 'pi://translate.pi',
 	'platform-demo-app': 'pi://demo.pi',
-	ecosystem: 'pi://testnetecosystem.pi',
-	chat: 'pi://chat.pi',
-	fireside: 'pi://fireside.pinet.com',
+	ecosystem: 'ecosystem.pinet.com',
+	chat: 'chat.pinet.com',
+	fireside: 'fireside.pinet.com',
+	profiles: 'profiles.pinet.com',
 };
 
-const pageRegex = /^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)/;
+const pageRegex =
+	/^(?:pi|https):\/\/app-cdn\.minepi\.com\/mobile-app-ui\/(.*?)(?:\?.*|$|\/)|^(?:(?:pi|https):\/\/|)(.*?)\.pinet\.com/;
 export const pages: Record<string, string> = {
-	welcome: 'pi://welcome.pi',
-	chat: 'pi://_LEGACY_chat.pi',
-	wallet: 'pi://wallet.pi',
-	feed: 'pi://mine.pi',
+	home: 'pinet.com',
+	wallet: 'wallet.pinet.com',
+	feed: 'mine.pinet.com',
 	error: 'pi://error.pi',
 };
 
@@ -23,19 +25,19 @@ export function transformToPiURL(url: string) {
 	const piUrl = url.replace('https://', 'pi://');
 
 	if (appRegex.test(piUrl)) {
-		const [, appName] = appRegex.exec(piUrl) ?? [];
+		const [, appName, pinetAppName] = appRegex.exec(piUrl) ?? [];
 
-		return appName in apps ? apps[appName] : piUrl;
+		return appName in apps ? apps[appName] : pinetAppName in apps ? apps[pinetAppName] : piUrl;
 	}
 
 	if (pageRegex.test(piUrl)) {
-		const [, pageName] = pageRegex.exec(piUrl) ?? [];
+		const [, pageName, pinetAppName] = pageRegex.exec(piUrl) ?? [];
 
-		return pageName in pages ? pages[pageName] : pages.welcome;
+		return pageName in pages ? pages[pageName] : pinetAppName in apps ? apps[pinetAppName] : pages.home;
 	}
 
 	if (piUrl.startsWith('pi://blockexplorer.minepi.com/') || piUrl.startsWith('pi://minepi.com/blockexplorer/')) {
-		return 'pi://blockchain.pi';
+		return 'blockexplorer.minepi.com';
 	}
 
 	return piUrl;

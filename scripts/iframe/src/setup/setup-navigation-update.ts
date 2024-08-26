@@ -17,7 +17,7 @@ export function setupNavigationUpdate() {
 
 		if (eventData.type === MessageType.INIT_NAVIGATION) {
 			window.addEventListener('locationchange', () => {
-				if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/welcome/') {
+				if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/home/') {
 					fixBlockchainButton();
 				}
 

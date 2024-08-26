@@ -4,7 +4,7 @@ import { MessageType, type ResponseMessage } from '../messages';
 import { setupNavigationUpdate } from '../setup';
 
 export function middleIframe() {
-	if (window.origin !== 'https://app-cdn.minepi.com') {
+	if (!['https://app-cdn.minepi.com', 'https://blockexplorer.minepi.com'].includes(window.origin)) {
 		return;
 	}
 
@@ -25,7 +25,7 @@ export function middleIframe() {
 	setupNavigationUpdate();
 	fixGoBackButton();
 
-	if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/welcome/') {
+	if (window.location.href === 'https://app-cdn.minepi.com/mobile-app-ui/home/') {
 		fixBlockchainButton();
 	}
 }

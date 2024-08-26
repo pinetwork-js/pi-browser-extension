@@ -4,7 +4,7 @@
 		"esModuleInterop": true,
 		"strict": true,
 		"target": "ESNext",
-		"lib": ["DOM", "DOM.Iterable", "ES6"],
+		"lib": ["DOM", "DOM.Iterable", "ES6", "ES2016"],
 		"outDir": "dist",
 		"declaration": true,
 		"resolveJsonModule": true,
